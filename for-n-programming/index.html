@@ -1,0 +1,78 @@
+<!--ここからがHTML-->
+<!DOCTYPE html>
+<html lang="ja-JP">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>N jQuery</title>
+</head>
+
+<body>
+    <h1>jQueryを使って場所を移動させよう！</h1>
+    <div id="box">
+        <p>ここが動くよ！</p>
+        <img src="https://lohas.nicoseiga.jp/thumb/799887i?1291656521" width="50px" height="50px">
+    </div>
+    <button id="btn1">右にする</button>
+    <button id="btn2">元に戻す</button>
+</body>
+
+</html>
+<!--ここまでがHTML-->
+
+
+<style>
+/*ここからがCSS*/
+    html {
+        text-align: center;
+    }
+
+    h1 {
+        margin: 50px auto;
+    }
+    
+    #box{
+        margin: 50px auto;
+    }
+
+ #btn1,#btn2{
+     margin: 0 10px;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+}
+#btn1:active,
+    #btn2:active{/*ボタンを押したとき*/
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
+}
+
+/*ここまでがCSS*/
+</style>
+
+<script>
+//    ここからがJS
+    $(function() {
+        $("#btn1").click(function() {
+            $("#box").animate({
+                marginLeft: '200px'
+            });
+        });
+        $("#btn2").click(function() {
+            $("#box").animate({
+                marginLeft: '0px'
+            });
+        });
+    });
+//ここまでがJS
+</script>
